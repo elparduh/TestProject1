@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20CA516A2A5E02AB0068CC62 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51692A5E02AB0068CC62 /* Endpoint.swift */; };
 		20CA516C2A5E14A30068CC62 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA516B2A5E14A30068CC62 /* NetworkService.swift */; };
+		20CA516E2A5E28220068CC62 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA516D2A5E28220068CC62 /* DataTransferService.swift */; };
 		20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */; };
 		20CF598E2A57D4BD009DF6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */; };
 		20CF59902A57D4BD009DF6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598F2A57D4BD009DF6BE /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		20CA51692A5E02AB0068CC62 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		20CA516B2A5E14A30068CC62 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20CA516D2A5E28220068CC62 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		20CF59882A57D4BD009DF6BE /* TestProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				20CA51692A5E02AB0068CC62 /* Endpoint.swift */,
 				20CA516B2A5E14A30068CC62 /* NetworkService.swift */,
+				20CA516D2A5E28220068CC62 /* DataTransferService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CA516E2A5E28220068CC62 /* DataTransferService.swift in Sources */,
 				20CA516C2A5E14A30068CC62 /* NetworkService.swift in Sources */,
 				20CF59902A57D4BD009DF6BE /* ViewController.swift in Sources */,
 				20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */,
