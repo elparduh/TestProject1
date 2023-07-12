@@ -55,12 +55,12 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		20CA516F2A5F00E00068CC62 /* Data */ = {
+		20CA516F2A5F00E00068CC62 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				20CA51702A5F014E0068CC62 /* RandomUserEndPoint.swift */,
 			);
-			path = Data;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		20CF597F2A57D4BC009DF6BE = {
@@ -82,7 +82,7 @@
 		20CF598A2A57D4BD009DF6BE /* TestProject1 */ = {
 			isa = PBXGroup;
 			children = (
-				20CA516F2A5F00E00068CC62 /* Data */,
+				20CA516F2A5F00E00068CC62 /* Core */,
 				20CA51682A5E01530068CC62 /* Networking */,
 				20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */,
 				20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */,
