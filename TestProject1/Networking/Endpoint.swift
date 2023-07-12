@@ -5,18 +5,18 @@ enum HTTPMethodType: String {
     case post    = "POST"
 }
 
-protocol EndpointProtocol {
+protocol Endpoint {
     var path: String { get }
     var method: HTTPMethodType { get }
 }
 
-extension EndpointProtocol {
+extension Endpoint {
     var scheme: String {"https"}
     var host: String { "randomuser.me" }
     var basePath: String { "/api" }
 }
 
-extension EndpointProtocol {
+extension Endpoint {
     
     func urlRequest() throws -> URLRequest {
         let url = try asUrl()
