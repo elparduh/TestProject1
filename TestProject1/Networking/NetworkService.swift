@@ -14,21 +14,6 @@ protocol NetworkCancellable {
 
 extension URLSessionTask: NetworkCancellable { }
 
-protocol NetworkSessionManagerProtocol {
-    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
-    func request(_ request: URLRequest,
-                 completion: @escaping CompletionHandler) -> NetworkCancellable
-}
-
-struct NetworkSessionManager: NetworkSessionManagerProtocol {
-    
-    func request(_ request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
-        let task = URLSession.shared.dataTask(with: request, completionHandler: completion)
-        task.resume()
-        return task
-    }
-}
-
 protocol NetworkServiceProtocol {
     typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
     func request(endpoint: Endpoint,
@@ -81,6 +66,21 @@ struct NetworkService: NetworkServiceProtocol {
         case .cancelled: return .cancelled
         default: return .generic(error)
         }
+    }
+}
+
+protocol NetworkSessionManagerProtocol {
+    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+    func request(_ request: URLRequest,
+                 completion: @escaping CompletionHandler) -> NetworkCancellable
+}
+
+struct NetworkSessionManager: NetworkSessionManagerProtocol {
+    
+    func request(_ request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
+        let task = URLSession.shared.dataTask(with: request, completionHandler: completion)
+        task.resume()
+        return task
     }
 }
 
