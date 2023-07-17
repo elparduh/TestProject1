@@ -11,6 +11,12 @@ protocol DataTransferDispatchQueue {
     func asyncExecute(work: @escaping () -> Void)
 }
 
+extension DispatchQueue: DataTransferDispatchQueue {
+    func asyncExecute(work: @escaping () -> Void) {
+        async(group: nil, execute: work)
+    }
+}
+
 protocol DataTransferErrorResolverProtocol {
     func resolve(error: NetworkError) -> Error
 }
@@ -43,6 +49,7 @@ struct DataTransferService: DataTransferServiceProtocol {
         self.errorResolver = errorResolver
     }
     
+    @discardableResult
     func get<T>(type: T.Type, endpoint: Endpoint, queue: DataTransferDispatchQueue, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where T : Decodable {
         networkService.request(endpoint: endpoint) { result in
             switch result {
