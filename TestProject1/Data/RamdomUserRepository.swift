@@ -1,7 +1,7 @@
 import Foundation
 
 protocol RamdomUserRepositoryProtocol {
-  func getRamdomUser(completion: @escaping (Result<RamdomUserModel,DataTransferError>) -> Void)
+  func getRamdomUser(completion: @escaping (Result<RamdomUserModel,Error>) -> Void)
 }
 
 struct RamdomUserRepository: RamdomUserRepositoryProtocol {
@@ -12,9 +12,9 @@ struct RamdomUserRepository: RamdomUserRepositoryProtocol {
       self.ramdomUserAPIDataSource = ramdomUserAPIDataSource
     }
     
-    func getRamdomUser(completion: @escaping (Result<RamdomUserModel, DataTransferError>) -> Void) {
+    func getRamdomUser(completion: @escaping (Result<RamdomUserModel, Error>) -> Void) {
         ramdomUserAPIDataSource.getRamdomUser { resultData  in
-            
+            completion(resultData)
         }
     }
     
