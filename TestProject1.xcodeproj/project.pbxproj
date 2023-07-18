@@ -13,6 +13,7 @@
 		20CA51712A5F014E0068CC62 /* RandomUserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51702A5F014E0068CC62 /* RandomUserEndPoint.swift */; };
 		20CA51742A65AD590068CC62 /* RamdomUserAPIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */; };
 		20CA51762A65B1270068CC62 /* RamdomUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51752A65B1270068CC62 /* RamdomUserModel.swift */; };
+		20CA51782A6646970068CC62 /* RamdomUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51772A6646970068CC62 /* RamdomUserRepository.swift */; };
 		20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */; };
 		20CF598E2A57D4BD009DF6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */; };
 		20CF59902A57D4BD009DF6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598F2A57D4BD009DF6BE /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		20CA51702A5F014E0068CC62 /* RandomUserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserEndPoint.swift; sourceTree = "<group>"; };
 		20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserAPIDataSource.swift; sourceTree = "<group>"; };
 		20CA51752A65B1270068CC62 /* RamdomUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserModel.swift; sourceTree = "<group>"; };
+		20CA51772A6646970068CC62 /* RamdomUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserRepository.swift; sourceTree = "<group>"; };
 		20CF59882A57D4BD009DF6BE /* TestProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				20CA51702A5F014E0068CC62 /* RandomUserEndPoint.swift */,
 				20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */,
 				20CA51752A65B1270068CC62 /* RamdomUserModel.swift */,
+				20CA51772A6646970068CC62 /* RamdomUserRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CA51782A6646970068CC62 /* RamdomUserRepository.swift in Sources */,
 				20CA516E2A5E28220068CC62 /* DataTransferService.swift in Sources */,
 				20CA516C2A5E14A30068CC62 /* NetworkService.swift in Sources */,
 				20CA51712A5F014E0068CC62 /* RandomUserEndPoint.swift in Sources */,
