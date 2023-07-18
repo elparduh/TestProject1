@@ -65,8 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				20CA51702A5F014E0068CC62 /* RandomUserEndPoint.swift */,
-				20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */,
 				20CA51752A65B1270068CC62 /* RamdomUserModel.swift */,
+				20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */,
 				20CA51772A6646970068CC62 /* RamdomUserRepository.swift */,
 			);
 			path = Data;
