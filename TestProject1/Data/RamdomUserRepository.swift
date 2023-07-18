@@ -14,7 +14,7 @@ struct RamdomUserRepository: RamdomUserRepositoryProtocol {
     
     func getRamdomUser(completion: @escaping (Result<RamdomUserModel, DataTransferError>) -> Void) {
         ramdomUserAPIDataSource.getRamdomUser { resultData  in
-            completion(resultData)
+            
         }
     }
     
