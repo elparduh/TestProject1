@@ -19,8 +19,8 @@ struct RamdomUserAPIDataSource: RamdomUserAPIDataSourceProtocol {
     func getRamdomUser(completion: @escaping (Result<UserData, Error>) -> Void) {
         dataTransferService.get(type: RamdomUserModel.self, endpoint: RamdomUserEndPoint.getUser, queue: backgroundQueue) { result in
                 switch result {
-                case .success(let response):
-                    completion(.success(UserData(ramdomUserModel: response)))
+                case .success(let ramdomUserResponse):
+                    completion(.success(ramdomUserResponse.toDomain()))
                     break
                 case .failure(let error):
                     completion(.failure(error))

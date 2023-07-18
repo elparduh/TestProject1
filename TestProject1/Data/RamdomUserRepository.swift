@@ -13,8 +13,8 @@ struct RamdomUserRepository: RamdomUserRepositoryProtocol {
     }
     
     func getRamdomUser(completion: @escaping (Result<UserData, Error>) -> Void) {
-        ramdomUserAPIDataSource.getRamdomUser { resultData  in
-            completion(resultData)
+        ramdomUserAPIDataSource.getRamdomUser { resultUserData  in
+            completion(resultUserData)
         }
     }
     
