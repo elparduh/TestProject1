@@ -1,8 +1,8 @@
 import Foundation
 
 protocol RamdomUserAPIDataSourceProtocol {
-  var dataTransferService: DataTransferServiceProtocol { get }
-  func getRamdomUser(completion: @escaping (Result<RamdomUserModel,DataTransferError>) -> Void)
+    var dataTransferService: DataTransferServiceProtocol { get }
+    func getRamdomUser(completion: @escaping (Result<RamdomUserModel,Error>) -> Void)
 }
 
 struct RamdomUserAPIDataSource: RamdomUserAPIDataSourceProtocol {
@@ -16,7 +16,7 @@ struct RamdomUserAPIDataSource: RamdomUserAPIDataSourceProtocol {
         self.backgroundQueue = backgroundQueue
     }
     
-    func getRamdomUser(completion: @escaping (Result<RamdomUserModel, DataTransferError>) -> Void) {
+    func getRamdomUser(completion: @escaping (Result<RamdomUserModel, Error>) -> Void) {
         dataTransferService.get(type: RamdomUserModel.self, endpoint: RamdomUserEndPoint.getUser, queue: backgroundQueue) { result in
                 switch result {
                 case .success(let response):

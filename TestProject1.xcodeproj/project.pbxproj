@@ -14,6 +14,9 @@
 		20CA51742A65AD590068CC62 /* RamdomUserAPIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */; };
 		20CA51762A65B1270068CC62 /* RamdomUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51752A65B1270068CC62 /* RamdomUserModel.swift */; };
 		20CA51782A6646970068CC62 /* RamdomUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51772A6646970068CC62 /* RamdomUserRepository.swift */; };
+		20CA517B2A67131A0068CC62 /* DispatchQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA517A2A67131A0068CC62 /* DispatchQueueType.swift */; };
+		20CA517D2A67134E0068CC62 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA517C2A67134E0068CC62 /* Cancellable.swift */; };
+		20CA517F2A67137A0068CC62 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA517E2A67137A0068CC62 /* ConnectionError.swift */; };
 		20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */; };
 		20CF598E2A57D4BD009DF6BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */; };
 		20CF59902A57D4BD009DF6BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF598F2A57D4BD009DF6BE /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 		20CA51732A65AD590068CC62 /* RamdomUserAPIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserAPIDataSource.swift; sourceTree = "<group>"; };
 		20CA51752A65B1270068CC62 /* RamdomUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserModel.swift; sourceTree = "<group>"; };
 		20CA51772A6646970068CC62 /* RamdomUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserRepository.swift; sourceTree = "<group>"; };
+		20CA517A2A67131A0068CC62 /* DispatchQueueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueType.swift; sourceTree = "<group>"; };
+		20CA517C2A67134E0068CC62 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		20CA517E2A67137A0068CC62 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		20CF59882A57D4BD009DF6BE /* TestProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20CF598D2A57D4BD009DF6BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +78,16 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		20CA51792A6711AB0068CC62 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				20CA517A2A67131A0068CC62 /* DispatchQueueType.swift */,
+				20CA517C2A67134E0068CC62 /* Cancellable.swift */,
+				20CA517E2A67137A0068CC62 /* ConnectionError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		20CF597F2A57D4BC009DF6BE = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +107,7 @@
 		20CF598A2A57D4BD009DF6BE /* TestProject1 */ = {
 			isa = PBXGroup;
 			children = (
+				20CA51792A6711AB0068CC62 /* Common */,
 				20CA51722A65AC4C0068CC62 /* Data */,
 				20CA51682A5E01530068CC62 /* Networking */,
 				20CF598B2A57D4BD009DF6BE /* AppDelegate.swift */,
@@ -177,10 +194,13 @@
 			files = (
 				20CA51782A6646970068CC62 /* RamdomUserRepository.swift in Sources */,
 				20CA516E2A5E28220068CC62 /* DataTransferService.swift in Sources */,
+				20CA517F2A67137A0068CC62 /* ConnectionError.swift in Sources */,
 				20CA516C2A5E14A30068CC62 /* NetworkService.swift in Sources */,
 				20CA51712A5F014E0068CC62 /* RandomUserEndPoint.swift in Sources */,
 				20CF59902A57D4BD009DF6BE /* ViewController.swift in Sources */,
 				20CA51742A65AD590068CC62 /* RamdomUserAPIDataSource.swift in Sources */,
+				20CA517D2A67134E0068CC62 /* Cancellable.swift in Sources */,
+				20CA517B2A67131A0068CC62 /* DispatchQueueType.swift in Sources */,
 				20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */,
 				20CA516A2A5E02AB0068CC62 /* Endpoint.swift in Sources */,
 				20CF598E2A57D4BD009DF6BE /* SceneDelegate.swift in Sources */,
