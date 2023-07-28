@@ -1,7 +1,7 @@
 import Foundation
 
 protocol RamdomUserProviderProtocol {
-  func getRamdomUserProvider() -> RamdomUserUseCase
+    func getRamdomUserProvider() -> RamdomUserUseCase
 }
 
 struct RamdomUserProvider: RamdomUserProviderProtocol {
@@ -9,7 +9,7 @@ struct RamdomUserProvider: RamdomUserProviderProtocol {
     private var ramdomUserRepository: RamdomUserRepositoryProtocol
     
     init(ramdomUserRepository: RamdomUserRepositoryProtocol) {
-      self.ramdomUserRepository = ramdomUserRepository
+        self.ramdomUserRepository = ramdomUserRepository
     }
     
     func getRamdomUserProvider() -> RamdomUserUseCase {

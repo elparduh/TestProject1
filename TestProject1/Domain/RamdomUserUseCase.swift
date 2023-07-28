@@ -1,7 +1,7 @@
 import Foundation
 
 protocol RamdomUserUseCaseProtocol {
-  func execute(completion: @escaping (Result<UserData,Error>) -> Void)
+    func execute(completion: @escaping (Result<UserData,Error>) -> Void)
 }
 
 struct RamdomUserUseCase: RamdomUserUseCaseProtocol {
@@ -14,7 +14,7 @@ struct RamdomUserUseCase: RamdomUserUseCaseProtocol {
     
     func execute(completion: @escaping (Result<UserData, Error>) -> Void) {
         ramdomUserRepository.getRamdomUser { resultData in
-          completion(resultData)
+            completion(resultData)
         }
     }
 }
