@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202F796B2A746DA10020BC65 /* RamdomUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */; };
+		202F796D2A7470600020BC65 /* RamdomUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796C2A7470600020BC65 /* RamdomUserProvider.swift */; };
 		20CA516A2A5E02AB0068CC62 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA51692A5E02AB0068CC62 /* Endpoint.swift */; };
 		20CA516C2A5E14A30068CC62 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA516B2A5E14A30068CC62 /* NetworkService.swift */; };
 		20CA516E2A5E28220068CC62 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CA516D2A5E28220068CC62 /* DataTransferService.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserUseCase.swift; sourceTree = "<group>"; };
+		202F796C2A7470600020BC65 /* RamdomUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserProvider.swift; sourceTree = "<group>"; };
 		20CA51692A5E02AB0068CC62 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		20CA516B2A5E14A30068CC62 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		20CA516D2A5E28220068CC62 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				20CA51812A673F1E0068CC62 /* UserData.swift */,
+				202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */,
+				202F796C2A7470600020BC65 /* RamdomUserProvider.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 				20CF59902A57D4BD009DF6BE /* ViewController.swift in Sources */,
 				20CA51742A65AD590068CC62 /* RamdomUserAPIDataSource.swift in Sources */,
 				20CA517D2A67134E0068CC62 /* Cancellable.swift in Sources */,
+				202F796B2A746DA10020BC65 /* RamdomUserUseCase.swift in Sources */,
 				20CA517B2A67131A0068CC62 /* DispatchQueueType.swift in Sources */,
 				20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */,
+				202F796D2A7470600020BC65 /* RamdomUserProvider.swift in Sources */,
 				20CA516A2A5E02AB0068CC62 /* Endpoint.swift in Sources */,
 				20CF598E2A57D4BD009DF6BE /* SceneDelegate.swift in Sources */,
 				20CA51762A65B1270068CC62 /* RamdomUserModel.swift in Sources */,
