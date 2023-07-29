@@ -12,7 +12,6 @@ protocol UserGeneratorViewProtocol {
 }
 
 struct UserGeneratorPresenter: UserGeneratorPresenterProtocol {
-    
     private var ramdomUserProvider: RamdomUserProviderProtocol
     private var userGeneratorView: UserGeneratorViewProtocol
     let constants: Constants = Constants()

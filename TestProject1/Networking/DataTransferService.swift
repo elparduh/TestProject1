@@ -12,6 +12,7 @@ protocol DataTransferDispatchQueue {
 }
 
 extension DispatchQueue: DataTransferDispatchQueue {
+    
     func asyncExecute(work: @escaping () -> Void) {
         async(group: nil, execute: work)
     }
@@ -22,15 +23,14 @@ protocol DataTransferErrorResolverProtocol {
 }
 
 struct DataTransferErrorResolver: DataTransferErrorResolverProtocol {
-    init() { }
+    
     func resolve(error: NetworkError) -> Error {
-        return error
+        error
     }
 }
 
 protocol DataTransferServiceProtocol {
     typealias CompletionHandler<T> = (Result<T, DataTransferError>) -> Void
-    
     @discardableResult
     func get<T>(type: T.Type,
                 endpoint: Endpoint,
@@ -39,7 +39,6 @@ protocol DataTransferServiceProtocol {
 }
 
 struct DataTransferService: DataTransferServiceProtocol {
-    
     private let networkService: NetworkServiceProtocol
     private let errorResolver: DataTransferErrorResolverProtocol
     

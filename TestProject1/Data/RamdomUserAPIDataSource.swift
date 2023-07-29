@@ -6,7 +6,6 @@ protocol RamdomUserAPIDataSourceProtocol {
 }
 
 struct RamdomUserAPIDataSource: RamdomUserAPIDataSourceProtocol {
-    
     let dataTransferService: DataTransferServiceProtocol
     let dispatchQueue: DataTransferDispatchQueue
     

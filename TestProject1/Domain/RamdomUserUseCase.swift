@@ -5,7 +5,6 @@ protocol RamdomUserUseCaseProtocol {
 }
 
 struct RamdomUserUseCase: RamdomUserUseCaseProtocol {
-    
     private var ramdomUserRepository: RamdomUserRepositoryProtocol
     
     init(ramdomUserRepository: RamdomUserRepositoryProtocol) {

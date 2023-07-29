@@ -7,6 +7,8 @@ protocol RamdomUserDependencyAssembler {
     func resolve() -> RamdomUserRepositoryProtocol
     func resolve() -> RamdomUserAPIDataSourceProtocol
     func resolve() -> DataTransferServiceProtocol
+    func resolve() -> NetworkServiceProtocol
+    func resolve() -> NetworkSessionManagerProtocol
 }
 
 extension RamdomUserDependencyAssembler {

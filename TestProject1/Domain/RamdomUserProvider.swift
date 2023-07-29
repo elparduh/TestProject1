@@ -5,7 +5,6 @@ protocol RamdomUserProviderProtocol {
 }
 
 struct RamdomUserProvider: RamdomUserProviderProtocol {
-    
     private var ramdomUserRepository: RamdomUserRepositoryProtocol
     
     init(ramdomUserRepository: RamdomUserRepositoryProtocol) {

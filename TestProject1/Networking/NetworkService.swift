@@ -21,7 +21,6 @@ protocol NetworkServiceProtocol {
 }
 
 struct NetworkService: NetworkServiceProtocol {
-    
     private let sessionManager: NetworkSessionManagerProtocol
     
     init(sessionManager: NetworkSessionManagerProtocol) {
@@ -59,9 +58,7 @@ struct NetworkService: NetworkServiceProtocol {
     }
     
     private func resolve(error: Error) -> NetworkError {
-        
         let codeError = URLError.Code(rawValue: (error as NSError).code)
-        
         switch codeError {
         case .notConnectedToInternet: return .notConnected
         case .cancelled: return .cancelled

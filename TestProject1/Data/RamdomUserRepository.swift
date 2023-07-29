@@ -5,7 +5,6 @@ protocol RamdomUserRepositoryProtocol {
 }
 
 struct RamdomUserRepository: RamdomUserRepositoryProtocol {
-    
     private var ramdomUserAPIDataSource : RamdomUserAPIDataSourceProtocol
     
     init(ramdomUserAPIDataSource : RamdomUserAPIDataSourceProtocol){
