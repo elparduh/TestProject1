@@ -30,6 +30,8 @@ struct DataTransferErrorResolver: DataTransferErrorResolverProtocol {
 }
 
 protocol DataTransferServiceProtocol {
+    var networkService: NetworkServiceProtocol { get }
+    var errorResolver: DataTransferErrorResolverProtocol { get }
     typealias CompletionHandler<T> = (Result<T, DataTransferError>) -> Void
     @discardableResult
     func get<T>(type: T.Type,
@@ -39,8 +41,8 @@ protocol DataTransferServiceProtocol {
 }
 
 struct DataTransferService: DataTransferServiceProtocol {
-    private let networkService: NetworkServiceProtocol
-    private let errorResolver: DataTransferErrorResolverProtocol
+    let networkService: NetworkServiceProtocol
+    let errorResolver: DataTransferErrorResolverProtocol
     
     init(networkService: NetworkServiceProtocol,
          errorResolver: DataTransferErrorResolverProtocol) {
