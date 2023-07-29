@@ -5,6 +5,7 @@ protocol ConnectionError: Error {
 }
 
 extension Error {
+    
     var isInternetConnectionError: Bool {
         guard let error = self as? ConnectionError, error.isInternetConnectionError else {
             return false

@@ -5,6 +5,7 @@ protocol DispatchQueueType {
 }
 
 extension DispatchQueue: DispatchQueueType {
+    
     func async(execute work: @escaping () -> Void) {
         async(group: nil, execute: work)
     }

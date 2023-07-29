@@ -1,12 +1,12 @@
 import Foundation
 
 protocol RamdomUserProviderProtocol {
+    var ramdomUserRepository: RamdomUserRepositoryProtocol { get }
     func getRamdomUserProvider() -> RamdomUserUseCase
 }
 
 struct RamdomUserProvider: RamdomUserProviderProtocol {
-    
-    private var ramdomUserRepository: RamdomUserRepositoryProtocol
+    let ramdomUserRepository: RamdomUserRepositoryProtocol
     
     init(ramdomUserRepository: RamdomUserRepositoryProtocol) {
         self.ramdomUserRepository = ramdomUserRepository

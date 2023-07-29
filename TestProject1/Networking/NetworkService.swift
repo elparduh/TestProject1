@@ -15,16 +15,16 @@ protocol NetworkCancellable {
 extension URLSessionTask: NetworkCancellable { }
 
 protocol NetworkServiceProtocol {
+    var sessionManager: NetworkSessionManagerProtocol { get }
     typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
     func request(endpoint: Endpoint,
                  completion: @escaping CompletionHandler) -> NetworkCancellable?
 }
 
 struct NetworkService: NetworkServiceProtocol {
+    let sessionManager: NetworkSessionManagerProtocol
     
-    private let sessionManager: NetworkSessionManagerProtocol
-    
-    init(sessionManager: NetworkSessionManagerProtocol = NetworkSessionManager()) {
+    init(sessionManager: NetworkSessionManagerProtocol) {
         self.sessionManager = sessionManager
     }
     
@@ -60,7 +60,6 @@ struct NetworkService: NetworkServiceProtocol {
     
     private func resolve(error: Error) -> NetworkError {
         let codeError = URLError.Code(rawValue: (error as NSError).code)
-        
         switch codeError {
         case .notConnectedToInternet: return .notConnected
         case .cancelled: return .cancelled

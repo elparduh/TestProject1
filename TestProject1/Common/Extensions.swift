@@ -4,6 +4,7 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 // MARK: - extension UIImageView
 extension UIImageView {
+    
     func loadImageUsingCache(withUrl urlString : String) {
         let url = URL(string: urlString)
         if url == nil {return}

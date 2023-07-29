@@ -1,12 +1,12 @@
 import Foundation
 
 protocol RamdomUserUseCaseProtocol {
+    var ramdomUserRepository: RamdomUserRepositoryProtocol { get }
     func execute(completion: @escaping (Result<UserData,Error>) -> Void)
 }
 
 struct RamdomUserUseCase: RamdomUserUseCaseProtocol {
-    
-    private var ramdomUserRepository: RamdomUserRepositoryProtocol
+    let ramdomUserRepository: RamdomUserRepositoryProtocol
     
     init(ramdomUserRepository: RamdomUserRepositoryProtocol) {
         self.ramdomUserRepository = ramdomUserRepository

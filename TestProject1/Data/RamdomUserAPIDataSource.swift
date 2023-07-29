@@ -2,26 +2,24 @@ import Foundation
 
 protocol RamdomUserAPIDataSourceProtocol {
     var dataTransferService: DataTransferServiceProtocol { get }
-    func getRamdomUser(completion: @escaping (Result<UserData,Error>) -> Void)
+    func getRamdomUser(completion: @escaping (Result<UserData, Error>) -> Void)
 }
 
 struct RamdomUserAPIDataSource: RamdomUserAPIDataSourceProtocol {
-    
     let dataTransferService: DataTransferServiceProtocol
-    let backgroundQueue: DataTransferDispatchQueue
+    let dispatchQueue: DataTransferDispatchQueue
     
-    init(dataTransferService: DataTransferServiceProtocol = DataTransferService(),
-         backgroundQueue: DataTransferDispatchQueue = DispatchQueue.global(qos: .userInitiated)) {
+    init(dataTransferService: DataTransferServiceProtocol,
+         dispatchQueue: DataTransferDispatchQueue) {
         self.dataTransferService = dataTransferService
-        self.backgroundQueue = backgroundQueue
+        self.dispatchQueue = dispatchQueue
     }
     
     func getRamdomUser(completion: @escaping (Result<UserData, Error>) -> Void) {
-        dataTransferService.get(type: RamdomUserModel.self, endpoint: RamdomUserEndPoint.getUser, queue: backgroundQueue) { result in
+        dataTransferService.get(type: RamdomUserModel.self, endpoint: RamdomUserEndPoint.getUser, queue: dispatchQueue) { result in
             switch result {
             case .success(let ramdomUserResponse):
                 completion(.success(ramdomUserResponse.toDomain()))
-                break
             case .failure(let error):
                 completion(.failure(error))
             }
