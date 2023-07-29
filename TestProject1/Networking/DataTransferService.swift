@@ -43,8 +43,8 @@ struct DataTransferService: DataTransferServiceProtocol {
     private let networkService: NetworkServiceProtocol
     private let errorResolver: DataTransferErrorResolverProtocol
     
-    init(networkService: NetworkServiceProtocol = NetworkService(),
-         errorResolver: DataTransferErrorResolverProtocol = DataTransferErrorResolver()) {
+    init(networkService: NetworkServiceProtocol,
+         errorResolver: DataTransferErrorResolverProtocol) {
         self.networkService = networkService
         self.errorResolver = errorResolver
     }

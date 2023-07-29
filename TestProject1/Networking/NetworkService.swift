@@ -24,7 +24,7 @@ struct NetworkService: NetworkServiceProtocol {
     
     private let sessionManager: NetworkSessionManagerProtocol
     
-    init(sessionManager: NetworkSessionManagerProtocol = NetworkSessionManager()) {
+    init(sessionManager: NetworkSessionManagerProtocol) {
         self.sessionManager = sessionManager
     }
     
@@ -59,6 +59,7 @@ struct NetworkService: NetworkServiceProtocol {
     }
     
     private func resolve(error: Error) -> NetworkError {
+        
         let codeError = URLError.Code(rawValue: (error as NSError).code)
         
         switch codeError {
