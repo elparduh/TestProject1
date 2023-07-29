@@ -1,6 +1,8 @@
 import Foundation
 
 protocol UserGeneratorPresenterProtocol {
+    var ramdomUserProvider: RamdomUserProviderProtocol { get }
+    var userGeneratorView: UserGeneratorViewProtocol { get }
     func retrieveUserData()
 }
 
@@ -12,8 +14,8 @@ protocol UserGeneratorViewProtocol {
 }
 
 struct UserGeneratorPresenter: UserGeneratorPresenterProtocol {
-    private var ramdomUserProvider: RamdomUserProviderProtocol
-    private var userGeneratorView: UserGeneratorViewProtocol
+    let ramdomUserProvider: RamdomUserProviderProtocol
+    let userGeneratorView: UserGeneratorViewProtocol
     let constants: Constants = Constants()
     
     init(ramdomUserProvider: RamdomUserProviderProtocol,
