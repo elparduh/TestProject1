@@ -4,7 +4,7 @@ extension UserGeneratorViewController {
     
     func addSubviews() {
         view.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(dataView)
+        mainStackView.addArrangedSubview(dataCardView)
         mainStackView.addArrangedSubview(errorMessageLabel)
         mainStackView.addArrangedSubview(userGenerateButton)
     }

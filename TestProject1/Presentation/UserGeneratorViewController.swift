@@ -2,7 +2,7 @@ import UIKit
 // MARK: - UserGeneratorViewController
 class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
-    let dataView: DataCardView = DataCardView()
+    let dataCardView: DataCardView = DataCardView()
     let mainStackView: UIStackView = UIStackView()
     let userGenerateButton:UIButton = UIButton()
     let errorMessageLabel:UILabel = UILabel()
@@ -36,7 +36,7 @@ extension UserGeneratorViewController {
     }
     
     private func configureErrorView(withMessage message: String) {
-        dataView.isHidden = true
+        dataCardView.isHidden = true
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
         shakeButton()
@@ -69,9 +69,9 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
     
     func diplayUserData(_ userData: UserData) {
         guard let urlString = userData.picture else { return }
-        dataView.userImageView.loadImageUsingCache(withUrl: urlString)
-        dataView.usernameLabel.text = "\(constants.greetingOne) \(userData.firstName ?? "") \(userData.lastName ?? "")"
-        dataView.userDataLabel.text = "\(constants.greetingTwo) \(userData.age ?? 0) \(constants.greetingThree) \(userData.country ?? "")\(constants.greetingFour) \(userData.phone ?? "") \(constants.greetingFive) \(userData.email ?? "")"
+        dataCardView.userImageView.loadImageUsingCache(withUrl: urlString)
+        dataCardView.usernameLabel.text = "\(constants.greetingOne) \(userData.firstName ?? "") \(userData.lastName ?? "")"
+        dataCardView.userDataLabel.text = "\(constants.greetingTwo) \(userData.age ?? 0) \(constants.greetingThree) \(userData.country ?? "")\(constants.greetingFour) \(userData.phone ?? "") \(constants.greetingFive) \(userData.email ?? "")"
         clearErrorMessageLabel()
     }
     
@@ -79,7 +79,7 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
         if errorMessageLabel.text != ""{
             errorMessageLabel.text = String()
             errorMessageLabel.isHidden = true
-            dataView.isHidden = false
+            dataCardView.isHidden = false
         }
     }
 }
