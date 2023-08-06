@@ -20,11 +20,11 @@ class UserGeneratorViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.presenter.retrieveUserData()
+        presenter.retrieveUserData()
     }
     
     private func initializePresenter() {
-        self.presenter = assemblerInjector.resolve(userGeneratorViewProtocol: self)
+        presenter = assemblerInjector.resolve(userGeneratorViewProtocol: self)
     }
 }
 
@@ -32,24 +32,14 @@ class UserGeneratorViewController: UIViewController {
 extension UserGeneratorViewController {
     
     @objc func generateTapped(sender: UIButton) {
-        self.presenter.retrieveUserData()
+        presenter.retrieveUserData()
     }
     
     private func configureErrorView(withMessage message: String) {
         dataCardView.isHidden = true
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
-        shakeButton()
-    }
-    
-    private func shakeButton() {
-        let animation = CAKeyframeAnimation()
-        animation.keyPath = constants.animationPosition
-        animation.values = constants.animationValues
-        animation.keyTimes = constants.animationTimes
-        animation.duration = constants.animationDuration
-        animation.isAdditive = true
-        userGenerateButton.layer.add(animation, forKey: constants.animationKey)
+        userGenerateButton.shakeButton()
     }
 }
 // MARK: - Show Data and Response
@@ -76,10 +66,8 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
     }
     
     func clearErrorMessageLabel() {
-        if errorMessageLabel.text != ""{
-            errorMessageLabel.text = String()
-            errorMessageLabel.isHidden = true
-            dataCardView.isHidden = false
-        }
+        errorMessageLabel.text = String()
+        errorMessageLabel.isHidden = true
+        dataCardView.isHidden = false
     }
 }

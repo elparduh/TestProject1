@@ -26,7 +26,7 @@ extension UserGeneratorViewController {
             mainStackView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor)
         ])
     }
-            
+    
     private func configureErrorMessageLabel() {
         errorMessageLabel.textAlignment = .center
         errorMessageLabel.textColor = .systemRed

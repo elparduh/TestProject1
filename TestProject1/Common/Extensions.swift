@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 // MARK: - Properties
 let imageCache = NSCache<NSString, UIImage>()
+let constants: Constants = Constants()
 // MARK: - extension UIImageView
 extension UIImageView {
     
@@ -34,5 +35,18 @@ extension UIImageView {
                 }
             }
         }).resume()
+    }
+}
+
+extension UIButton {
+    
+    func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = constants.animationPosition
+        animation.values = constants.animationValues
+        animation.keyTimes = constants.animationTimes
+        animation.duration = constants.animationDuration
+        animation.isAdditive = true
+        layer.add(animation, forKey: constants.animationKey)
     }
 }
