@@ -3,8 +3,9 @@ import UIKit
 class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
     let dataView: DataCardView = DataCardView()
-    let userGenerateButton: UIButton = UIButton(type:.system)
-    let errorMessageLabel = UILabel()
+    let mainStackView: UIStackView = UIStackView()
+    let userGenerateButton:UIButton = UIButton()
+    let errorMessageLabel:UILabel = UILabel()
     private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
     private var presenter : UserGeneratorPresenterProtocol!
     let constants: Constants = Constants()
@@ -35,6 +36,7 @@ extension UserGeneratorViewController {
     }
     
     private func configureErrorView(withMessage message: String) {
+        dataView.isHidden = true
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
         shakeButton()
@@ -77,6 +79,7 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
         if errorMessageLabel.text != ""{
             errorMessageLabel.text = String()
             errorMessageLabel.isHidden = true
+            dataView.isHidden = false
         }
     }
 }
