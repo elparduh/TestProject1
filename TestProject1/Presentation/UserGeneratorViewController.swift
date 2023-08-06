@@ -2,7 +2,6 @@ import UIKit
 // MARK: - UserGeneratorViewController
 class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
-    var safeArea: UILayoutGuide!
     let dataView: DataCardView = DataCardView()
     let userGenerateButton: UIButton = UIButton(type:.system)
     let errorMessageLabel = UILabel()
@@ -12,10 +11,9 @@ class UserGeneratorViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        safeArea = view.layoutMarginsGuide
         navigationItem.title = constants.titleViewController
-        style()
-        layout()
+        addSubviews()
+        addConstraints()
         initializePresenter()
     }
     
@@ -28,55 +26,10 @@ class UserGeneratorViewController: UIViewController {
         self.presenter = assemblerInjector.resolve(userGeneratorViewProtocol: self)
     }
 }
-// MARK: - UI
-extension UserGeneratorViewController {
-    private func style() {
-        //UserGeneratorViewController
-        view.backgroundColor = .systemBackground
-        //DataView
-        dataView.translatesAutoresizingMaskIntoConstraints = false
-        //Button
-        userGenerateButton.translatesAutoresizingMaskIntoConstraints = false
-        userGenerateButton.configuration = .filled()
-        userGenerateButton.configuration?.imagePadding = constants.imagePadding
-        userGenerateButton.setTitle(constants.titleButton, for: [])
-        userGenerateButton.addTarget(self, action: #selector(generateTapped), for: .primaryActionTriggered)
-        //ErrorLabel
-        errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorMessageLabel.textAlignment = .center
-        errorMessageLabel.textColor = .systemRed
-        errorMessageLabel.numberOfLines = .zero
-        errorMessageLabel.text = constants.messageDefault
-        errorMessageLabel.isHidden = true
-    }
-    
-    private func layout() {
-        view.addSubview(dataView)
-        view.addSubview(userGenerateButton)
-        view.addSubview(errorMessageLabel)
-        //DataView
-        NSLayoutConstraint.activate([
-            safeArea.topAnchor.constraint(equalTo: dataView.topAnchor),
-            safeArea.trailingAnchor.constraint(equalToSystemSpacingAfter: dataView.trailingAnchor, multiplier: constants.constraintSafeArea),
-            dataView.leadingAnchor.constraint(equalToSystemSpacingAfter: safeArea.leadingAnchor, multiplier: constants.constraintDataView)
-        ])
-        //Button
-        NSLayoutConstraint.activate([
-            userGenerateButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -constants.constraintBottomButton),
-            userGenerateButton.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
-            userGenerateButton.trailingAnchor.constraint(equalTo: dataView.trailingAnchor),
-            userGenerateButton.heightAnchor.constraint(equalToConstant: constants.constraintHeightButton)
-        ])
-        //ErrorLabel
-        NSLayoutConstraint.activate([
-            errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: dataView.bottomAnchor, multiplier: constants.constraintTopErrorLabel),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: dataView.trailingAnchor)
-        ])
-    }
-}
+
 // MARK: - Actions
 extension UserGeneratorViewController {
+    
     @objc func generateTapped(sender: UIButton) {
         self.presenter.retrieveUserData()
     }
@@ -99,6 +52,7 @@ extension UserGeneratorViewController {
 }
 // MARK: - Show Data and Response
 extension UserGeneratorViewController: UserGeneratorViewProtocol {
+    
     func showError(_ error: String) {
         configureErrorView(withMessage: error)
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202E67052A7F548900256473 /* UserGeneratorViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E67042A7F548900256473 /* UserGeneratorViewController+Layout.swift */; };
 		202F796B2A746DA10020BC65 /* RamdomUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */; };
 		202F796D2A7470600020BC65 /* RamdomUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796C2A7470600020BC65 /* RamdomUserProvider.swift */; };
 		202F79702A7479E80020BC65 /* UserGeneratorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796F2A7479E80020BC65 /* UserGeneratorPresenter.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202E67042A7F548900256473 /* UserGeneratorViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserGeneratorViewController+Layout.swift"; sourceTree = "<group>"; };
 		202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserUseCase.swift; sourceTree = "<group>"; };
 		202F796C2A7470600020BC65 /* RamdomUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserProvider.swift; sourceTree = "<group>"; };
 		202F796F2A7479E80020BC65 /* UserGeneratorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorPresenter.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				202F796F2A7479E80020BC65 /* UserGeneratorPresenter.swift */,
 				202F79712A747F3C0020BC65 /* DataCardView.swift */,
 				20CF598F2A57D4BD009DF6BE /* UserGeneratorViewController.swift */,
+				202E67042A7F548900256473 /* UserGeneratorViewController+Layout.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				20CA516E2A5E28220068CC62 /* DataTransferService.swift in Sources */,
 				20CA51822A673F1E0068CC62 /* UserData.swift in Sources */,
 				20CA517F2A67137A0068CC62 /* ConnectionError.swift in Sources */,
+				202E67052A7F548900256473 /* UserGeneratorViewController+Layout.swift in Sources */,
 				202F79792A7482D30020BC65 /* RamdomUserDependencyAssembler.swift in Sources */,
 				20CA51852A6743C40068CC62 /* RamdomUserModel+Mapping.swift in Sources */,
 				202F79702A7479E80020BC65 /* UserGeneratorPresenter.swift in Sources */,
