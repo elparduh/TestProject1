@@ -58,10 +58,7 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
     }
     
     func diplayUserData(_ userData: UserData) {
-        guard let urlString = userData.picture else { return }
-        dataCardView.userImageView.loadImageUsingCache(withUrl: urlString)
-        dataCardView.usernameLabel.text = "\(constants.greetingOne) \(userData.firstName ?? "") \(userData.lastName ?? "")"
-        dataCardView.userDataLabel.text = "\(constants.greetingTwo) \(userData.age ?? 0) \(constants.greetingThree) \(userData.country ?? "")\(constants.greetingFour) \(userData.phone ?? "") \(constants.greetingFive) \(userData.email ?? "")"
+        dataCardView.dataCardViewBind(userData)
         clearErrorMessageLabel()
     }
     

@@ -2,12 +2,12 @@ import UIKit
 
 class DataCardView: UIView {
     // MARK: - Properties
-    let mainStackView = UIStackView()
-    let userImageView = UIImageView()
-    let usernameLabel = UILabel()
-    let userDataLabel = UILabel()
-    let dividerView: UIView = UIView()
-    let constants: Constants = Constants()
+    private let mainStackView = UIStackView()
+    private let userImageView = UIImageView()
+    private let usernameLabel = UILabel()
+    private let userDataLabel = UILabel()
+    private let dividerView: UIView = UIView()
+    private let constants: Constants = Constants()
     // MARK: - Constructor
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +21,12 @@ class DataCardView: UIView {
         addConstraints()
     }
     
+    func dataCardViewBind(_ userData: UserData) {
+        guard let urlString = userData.picture else { return }
+        userImageView.loadImageUsingCache(withUrl: urlString)
+        usernameLabel.text = "\(constants.greetingOne) \(userData.firstName ?? "") \(userData.lastName ?? "")"
+        userDataLabel.text = "\(constants.greetingTwo) \(userData.age ?? 0) \(constants.greetingThree) \(userData.country ?? "")\(constants.greetingFour) \(userData.phone ?? "") \(constants.greetingFive) \(userData.email ?? "")"
+    }
 }
 // MARK: - UI
 extension DataCardView {
