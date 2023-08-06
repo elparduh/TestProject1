@@ -19,6 +19,7 @@ struct Constants {
     // MARK: - UserGeneratorViewController
     var titleViewController: String { "RandomUser" }
     var titleButton: String { "Generate" }
+    var titleNavigateButton: String { "Go To SwiftUI" }
     var imagePadding: CGFloat { 8.0 }
     var constraintSafeArea: CGFloat { 1.0 }
     var constraintDataView: CGFloat { 1.0 }

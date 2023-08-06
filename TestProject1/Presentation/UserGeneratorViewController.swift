@@ -1,14 +1,18 @@
 import UIKit
+import SwiftUI
 // MARK: - UserGeneratorViewController
 class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
     var safeArea: UILayoutGuide!
     let dataView: DataCardView = DataCardView()
     let userGenerateButton: UIButton = UIButton(type:.system)
+    let navigateButton: UIButton = UIButton(type:.system)
     let errorMessageLabel = UILabel()
     private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
     private var presenter : UserGeneratorPresenterProtocol!
     let constants: Constants = Constants()
+    lazy var ratingView = createRatingView()
+    private var rating = Rating()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +52,23 @@ extension UserGeneratorViewController {
         errorMessageLabel.numberOfLines = .zero
         errorMessageLabel.text = constants.messageDefault
         errorMessageLabel.isHidden = true
+        //NavigateButton
+        navigateButton.translatesAutoresizingMaskIntoConstraints = false
+        navigateButton.configuration = .filled()
+        navigateButton.configuration?.imagePadding = constants.imagePadding
+        navigateButton.setTitle(constants.titleNavigateButton, for: [])
+        navigateButton.addTarget(self, action: #selector(navigateTapped), for: .touchUpInside)
+        ratingView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func layout() {
         view.addSubview(dataView)
         view.addSubview(userGenerateButton)
         view.addSubview(errorMessageLabel)
+        //navigateButton
+        view.addSubview(navigateButton)
+        //RatingView
+        view.addSubview(ratingView)
         //DataView
         NSLayoutConstraint.activate([
             safeArea.topAnchor.constraint(equalTo: dataView.topAnchor),
@@ -73,6 +88,25 @@ extension UserGeneratorViewController {
             errorMessageLabel.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
             errorMessageLabel.trailingAnchor.constraint(equalTo: dataView.trailingAnchor)
         ])
+        //Navigate Button
+        NSLayoutConstraint.activate([
+            navigateButton.bottomAnchor.constraint(equalTo: userGenerateButton.topAnchor, constant: -20),
+            navigateButton.leadingAnchor.constraint(equalTo: dataView.leadingAnchor),
+            navigateButton.trailingAnchor.constraint(equalTo: dataView.trailingAnchor),
+            navigateButton.heightAnchor.constraint(equalToConstant: constants.constraintHeightButton)
+        ])
+        //RatingView
+        NSLayoutConstraint.activate([
+            ratingView.topAnchor.constraint(equalToSystemSpacingBelow: dataView.bottomAnchor, multiplier: constants.constraintTopErrorLabel),
+            ratingView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    private func createRatingView() -> UIView {
+        let hostingController = UIHostingController(rootView: RatingViewContainer(rating: rating))
+        guard let ratingView = hostingController.view else { return UIView() }
+        //addChild(hostingController)
+        return ratingView
     }
 }
 // MARK: - Actions
@@ -81,8 +115,12 @@ extension UserGeneratorViewController {
         self.presenter.retrieveUserData()
     }
     
+    @objc func navigateTapped(sender: UIButton) {
+        present(UIHostingController(rootView: StockListScreen()), animated: true)
+    }
+    
     private func configureErrorView(withMessage message: String) {
-        errorMessageLabel.isHidden = false
+        errorMessageLabel.isHidden = true
         errorMessageLabel.text = message
         shakeButton()
     }
