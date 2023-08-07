@@ -45,7 +45,7 @@ extension UserGeneratorViewController {
     }
     
     func createUserDataView() -> UIView {
-        let hostingController = UIHostingController(rootView: UserDataView())
+        let hostingController = UIHostingController(rootView: UserDataView(userDataModel: userDataModel))
         guard let ratingView = hostingController.view else { return UIView() }
         return ratingView
     }
