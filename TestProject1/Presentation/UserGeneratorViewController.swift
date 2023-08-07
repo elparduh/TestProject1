@@ -2,14 +2,14 @@ import UIKit
 // MARK: - UserGeneratorViewController
 class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
-    let dataCardView:DataCardView = DataCardView()
-    let mainStackView:UIStackView = UIStackView()
-    let userGenerateButton:UIButton = UIButton()
-    let errorMessageLabel:UILabel = UILabel()
-    lazy var userDataView:UIView = createUserDataView()
-    private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
-    private var presenter : UserGeneratorPresenterProtocol!
-    let constants: Constants = Constants()
+    let dataCardView: DataCardView = DataCardView()
+    let mainStackView: UIStackView = UIStackView()
+    let userGenerateButton: UIButton = UIButton()
+    let errorMessageLabel: UILabel = UILabel()
+    lazy var userDataView: UIView = createUserDataView()
+    private let assemblerInjector: RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
+    private var presenter: UserGeneratorPresenterProtocol!
+    private let constants: Constants = Constants()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
