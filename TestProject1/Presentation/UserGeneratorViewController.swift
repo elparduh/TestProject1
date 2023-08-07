@@ -2,10 +2,11 @@ import UIKit
 // MARK: - UserGeneratorViewController
 class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
-    let dataCardView: DataCardView = DataCardView()
-    let mainStackView: UIStackView = UIStackView()
+    let dataCardView:DataCardView = DataCardView()
+    let mainStackView:UIStackView = UIStackView()
     let userGenerateButton:UIButton = UIButton()
     let errorMessageLabel:UILabel = UILabel()
+    lazy var userDataView:UIView = createUserDataView()
     private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
     private var presenter : UserGeneratorPresenterProtocol!
     let constants: Constants = Constants()
