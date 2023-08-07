@@ -10,7 +10,7 @@ class UserGeneratorViewController: UIViewController {
     private let assemblerInjector: RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
     private var presenter: UserGeneratorPresenterProtocol!
     private let constants: Constants = Constants()
-    let userDataModel = UserDataModel()
+    let userDataModel: UserDataModel = UserDataModel()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
