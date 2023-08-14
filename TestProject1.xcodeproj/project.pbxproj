@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		202E67052A7F548900256473 /* UserGeneratorViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E67042A7F548900256473 /* UserGeneratorViewController+Layout.swift */; };
+		202E67072A8064F300256473 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E67062A8064F300256473 /* UserDataView.swift */; };
+		202E67092A80819A00256473 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E67082A80819A00256473 /* UserDataModel.swift */; };
 		202F796B2A746DA10020BC65 /* RamdomUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */; };
 		202F796D2A7470600020BC65 /* RamdomUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796C2A7470600020BC65 /* RamdomUserProvider.swift */; };
 		202F79702A7479E80020BC65 /* UserGeneratorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F796F2A7479E80020BC65 /* UserGeneratorPresenter.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		202E67042A7F548900256473 /* UserGeneratorViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserGeneratorViewController+Layout.swift"; sourceTree = "<group>"; };
+		202E67062A8064F300256473 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
+		202E67082A80819A00256473 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		202F796A2A746DA10020BC65 /* RamdomUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserUseCase.swift; sourceTree = "<group>"; };
 		202F796C2A7470600020BC65 /* RamdomUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamdomUserProvider.swift; sourceTree = "<group>"; };
 		202F796F2A7479E80020BC65 /* UserGeneratorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGeneratorPresenter.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				202F79712A747F3C0020BC65 /* DataCardView.swift */,
 				20CF598F2A57D4BD009DF6BE /* UserGeneratorViewController.swift */,
 				202E67042A7F548900256473 /* UserGeneratorViewController+Layout.swift */,
+				202E67062A8064F300256473 /* UserDataView.swift */,
+				202E67082A80819A00256473 /* UserDataModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -263,10 +269,12 @@
 				202F796B2A746DA10020BC65 /* RamdomUserUseCase.swift in Sources */,
 				202F79762A74822F0020BC65 /* Extensions.swift in Sources */,
 				20CA517B2A67131A0068CC62 /* DispatchQueueType.swift in Sources */,
+				202E67072A8064F300256473 /* UserDataView.swift in Sources */,
 				20CF598C2A57D4BD009DF6BE /* AppDelegate.swift in Sources */,
 				202F79742A747FF10020BC65 /* Constants.swift in Sources */,
 				202F796D2A7470600020BC65 /* RamdomUserProvider.swift in Sources */,
 				20CA516A2A5E02AB0068CC62 /* Endpoint.swift in Sources */,
+				202E67092A80819A00256473 /* UserDataModel.swift in Sources */,
 				20CF598E2A57D4BD009DF6BE /* SceneDelegate.swift in Sources */,
 				20CA51762A65B1270068CC62 /* RamdomUserModel.swift in Sources */,
 			);

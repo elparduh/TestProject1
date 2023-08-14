@@ -4,11 +4,13 @@ class UserGeneratorViewController: UIViewController {
     // MARK: - Properties
     let dataCardView: DataCardView = DataCardView()
     let mainStackView: UIStackView = UIStackView()
-    let userGenerateButton:UIButton = UIButton()
-    let errorMessageLabel:UILabel = UILabel()
-    private let assemblerInjector : RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
-    private var presenter : UserGeneratorPresenterProtocol!
-    let constants: Constants = Constants()
+    let userGenerateButton: UIButton = UIButton()
+    let errorMessageLabel: UILabel = UILabel()
+    lazy var userDataView: UIView = createUserDataView()
+    private let assemblerInjector: RamdomUserAssemblerInjector = RamdomUserAssemblerInjector()
+    private var presenter: UserGeneratorPresenterProtocol!
+    private let constants: Constants = Constants()
+    let userDataModel: UserDataModel = UserDataModel()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ extension UserGeneratorViewController {
     
     private func configureErrorView(withMessage message: String) {
         dataCardView.isHidden = true
+        userDataView.isHidden = true
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
         userGenerateButton.shakeButton()
@@ -59,6 +62,9 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
     
     func diplayUserData(_ userData: UserData) {
         dataCardView.dataCardViewBind(userData)
+        userDataModel.name = userData.firstName ?? String()
+        userDataModel.phone = userData.phone ?? String()
+        userDataModel.email = userData.email ?? String()
         clearErrorMessageLabel()
     }
     
@@ -66,5 +72,6 @@ extension UserGeneratorViewController: UserGeneratorViewProtocol {
         errorMessageLabel.text = String()
         errorMessageLabel.isHidden = true
         dataCardView.isHidden = false
+        userDataView.isHidden = false
     }
 }
